@@ -4,7 +4,7 @@ A web server is a program that receives requests from a client and sends the pro
 -------------------
 GETTING FILES:
 ------------------
-I interpret '/' and '/index.html' as index.html in a GET req. All other symbols I treat as a file to look for in the root (www) directory, and I return a 500 if that file does not exist. If I were smart, I would have implemented some sort of functionality to automatically pull the mime types from the system, but I hardcoded for every file extension in the directory (including those listed in the instructions!). It seems the main difference for our purposes between HTTP/1.1 and /1.0 is that /1.0 does not support persistant connections, where 1.1 does. In that case, I should not get a "Connection" line in a well-formed /1.0 req and I will not send a "Connection" line back in a /1.0 response. Beyond this I treat the two the same. 
+I interpret '/' and '/index.html' as index.html in a GET req. All other symbols I treat as a file to look for in the root (www) directory, and I return a 500 if that file does not exist. I hardcoded for every file extension in the directory because the main difference between HTTP/1.1 and /1.0 is that /1.0 does not support persistant connections, where 1.1 does. In that case, I should not get a "Connection" line in a well-formed /1.0 req and I will not send a "Connection" line back in a /1.0 response. Beyond this I treat the two the same. 
 
 -----------------------
 MULTIPLE CONNECTIONS:
